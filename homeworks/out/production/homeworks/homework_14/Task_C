@@ -1,0 +1,13 @@
+1. Парадигма программирования, в которой основными концепциями являются понятия объектов и классов.
+2. Класс в Java является шаблоном или описанием объекта.
+3. Данные, которые хранит объект.
+4.
+Example example1 = new Example();
+5.
+public class Example {
+    Object exampleProperties;
+}
+6.
+    example1.exampleProperties = "some properties";
+7.
+    System.out.prinln(example1.exampleProperties);
