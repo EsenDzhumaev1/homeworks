@@ -7,10 +7,12 @@ public class Comp {
     String brand;
     String color;
     HardDisk hdd;
+    String GPU;
     RAM ram;
     USB[] usb;
     Keyboard keyboard;
-    public Comp(String brand){
+    public Comp(String brand, String GPU){
+        this.GPU = GPU;
         this.display = new Display();
         this.brand = brand;
         this.color = "black";
@@ -19,7 +21,8 @@ public class Comp {
         this.usb = new USB[]{new USB(1), new USB(2)};
         this.keyboard = new Keyboard();
     }
-    public Comp(Display display, String brand, String color, HardDisk hdd, RAM ram, USB[] usb, Keyboard keyboard){
+    public Comp(String GPU, Display display, String brand, String color, HardDisk hdd, RAM ram, USB[] usb, Keyboard keyboard){
+        this.GPU = GPU;
         this.display = display;
         this.brand = brand;
         this.color = color;
@@ -80,12 +83,13 @@ public class Comp {
     @Override
     public String toString(){
         return String.format("display: %s\n" +
+                "GPU: %s\n" +
                 "brand: %s\n" +
                 "color: %s\n" +
                 "hdd: %s\n" +
                 "ram: %s\n" +
                 "usb: %s\n" +
                 "keyboard: %s",
-                this.display, this.brand, this.color, this.hdd, this.ram, Arrays.toString(this.usb), this.keyboard);
+                this.display,this.GPU ,this.brand, this.color, this.hdd, this.ram, Arrays.toString(this.usb), this.keyboard);
     }
 }
