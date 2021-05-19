@@ -19,12 +19,15 @@ public class Main extends Canvas{
     public void graphic(Graphics g, int degree, Color clr) {
         g.setColor(clr);
         System.out.println("New Graphic\n" + "=".repeat(30) + "\n");
-        for (double x=-100;x<=100;x = x+0.1){
+        for (double x = -100; x <= 100; x += 0.1){
             double y = Math.pow(x, degree);
-            int X = (int)Math.round((double)width / 2 + x*20);
-            int Y = (int)Math.round((double)height / 2 - y*20);
-            System.out.printf("X = %s, Y = %s\n", X, Y);
-            g.fillOval(X,Y,4,4);
+            int X1 = (int)Math.round((double)width / 2 + x * (double) (width / 20));
+            int Y1 = (int)Math.round((double)height / 2 - y * (double) (height / 20));
+            System.out.printf("X = %s, Y = %s\n", X1, Y1);
+            y = Math.pow(x + 0.1, degree);
+            int X2 = (int)Math.round((double)width / 2 + (x + 0.1) * (double) (width / 20));
+            int Y2 = (int)Math.round((double)height / 2 - y * (double) (height / 20));
+            g.drawLine(X1, Y1, X2, Y2);
         }
     }
 
