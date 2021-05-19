@@ -11,12 +11,14 @@ public class Main extends Canvas{
         this.height = 720;
     }
     public void section(Graphics g) {
+        //Для координатной плоскости
         g.setColor(Color.BLACK);
         g.drawLine(0, height / 2, width, height / 2);
         g.drawLine(width / 2, height, width / 2, 0);
     }
 
     public void graphic(Graphics g, int degree, Color clr) {
+        //Прорисовка парабол
         g.setColor(clr);
         System.out.println("New Graphic\n" + "=".repeat(30) + "\n");
         for (double x = -100; x <= 100; x += 0.1){
